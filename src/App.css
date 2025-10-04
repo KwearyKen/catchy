@@ -1,0 +1,232 @@
+/* === GLOBAL APP STYLES === */
+.app-container {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background-color: #fefefe; /* light theme */
+  color: #222;
+}
+
+.app-container.dark {
+  background-color: #111; /* dark theme background */
+  color: #eee;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.loading {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* === HEADER BAR === */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #fff;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* always center logo */
+  padding: 0 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  gap: 16px; /* optional spacing if buttons exist */
+}
+
+.app-container.dark .app-header {
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.08);
+}
+
+.app-header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none; /* prevents stretching */
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  pointer-events: none;
+  color: #222
+}
+
+.app-header.dark .logo {
+  color: #fff; /* switch to white in dark mode */
+}
+
+/* position header buttons absolutely */
+.header-btn.left {
+  position: absolute;
+  left: 16px;
+}
+
+.header-btn.right {
+  position: absolute;
+  right: 16px;
+}
+
+.header-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.header-btn:hover {
+  color: #ff5e78;
+  transform: scale(1.1);
+}
+
+/* === CARD STACK POSITIONING === */
+.card-stack {
+  position: relative;
+  width: 90%;
+  max-width: 360px;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: calc(12vh + 56px) auto 60px; /* slightly higher than center-top */
+}
+
+@media (max-height: 700px) {
+  .card-stack {
+    margin-bottom: 40px;
+  }
+}
+
+/* === BUTTONS UNDER CARDS === */
+.buttons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.buttons button:active {
+  transform: scale(0.9);
+}
+
+/* === COVER / LOADING SCREENS === */
+.first-cover,
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  color: #fff;
+  text-align: center;
+}
+
+.first-cover {
+  background-color: #222;
+}
+
+.first-cover .cover-text {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.loading-screen {
+  background-color: #222;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.loading-screen .loading-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transform: translateZ(0);
+  animation: loadingFade 240ms ease;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #fff;
+}
+
+.logo .logo-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+.logo .logo-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem; /* slightly larger for emphasis */
+  font-weight: normal; /* keep it natural, not bold */
+}
+
+.loader {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.18);
+  border-top-color: #ff5e78;
+  animation: spin 900ms linear infinite;
+}
+
+/* === ANIMATIONS === */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loadingFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === MOBILE TWEAKS === */
+@media (max-width: 480px) {
+  .logo .logo-emoji { font-size: 1.6rem; }
+  .logo .logo-text { font-size: 1rem; }
+  .loader { width: 40px; height: 40px; border-width: 3px; }
+}
+
+/* === GLOBAL FIXES === */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: inherit;
+}
+
+body { display: block; width: 100%; }
+
+*, *::before, *::after { box-sizing: border-box; }

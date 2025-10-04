@@ -1,0 +1,94 @@
+/* === Summary Container === */
+.summary {
+  text-align: center;
+  padding: 80px 20px 20px; /* top padding accounts for fixed header */
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fefefe;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* === Dark Mode === */
+.summary.dark {
+  background-color: #111;
+  color: #eee;
+}
+
+/* === Liked Cats Grid === */
+.liked-cats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.liked-cats img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
+
+.summary.dark .liked-cats img {
+  border-color: #eee;
+}
+
+/* === Summary Text === */
+.summary-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* === Save Results Button === */
+.save-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #ff5e78;
+  color: #fff;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.save-btn:hover {
+  transform: scale(1.05);
+  background-color: #e64b66;
+}
+
+.summary.dark .save-btn {
+  background-color: #ff758f;
+  color: #111;
+}
+
+.summary.dark .save-btn:hover {
+  background-color: #e64b66;
+}
+
+/* === Header Dark Mode Fix === */
+.summary .app-header.dark {
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.08);
+}
+
+/* === Responsive tweaks === */
+@media (max-width: 480px) {
+  .liked-cats img {
+    width: 80px;
+    height: 80px;
+  }
+  .summary-content h2 {
+    font-size: 1.2rem;
+  }
+  .save-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
