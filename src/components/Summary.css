@@ -1,7 +1,7 @@
-/* === Summary Container === */
+
 .summary {
   text-align: center;
-  padding: 80px 20px 20px; /* top padding accounts for fixed header */
+  padding: 80px 20px 20px; 
   min-height: 100vh;
   width: 100%;
   background-color: #fefefe;
@@ -9,13 +9,12 @@
   box-sizing: border-box;
 }
 
-/* === Dark Mode === */
+/* Dark Mode*/
 .summary.dark {
   background-color: #111;
   color: #eee;
 }
 
-/* === Liked Cats Grid === */
 .liked-cats {
   display: flex;
   flex-wrap: wrap;
@@ -37,13 +36,11 @@
   border-color: #eee;
 }
 
-/* === Summary Text === */
 .summary-content h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-/* === Save Results Button === */
 .save-btn {
   margin-top: 20px;
   padding: 10px 20px;
@@ -71,14 +68,13 @@
   background-color: #e64b66;
 }
 
-/* === Header Dark Mode Fix === */
+/* Header Dark Mode  */
 .summary .app-header.dark {
   background-color: #222;
   color: #fff;
   box-shadow: 0 2px 10px rgba(255,255,255,0.08);
 }
 
-/* === Responsive tweaks === */
 @media (max-width: 480px) {
   .liked-cats img {
     width: 80px;

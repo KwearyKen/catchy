@@ -14,9 +14,6 @@ function CatCard({ image, onSwipe, swipeDirection, isNext }) {
     return { name: randomName, age: randomAge, gender: randomGender, size: randomSize };
   }, [image]);
 
-  // Use currentTarget so the handlers always read/write the dataset on
-  // the element that has the listeners (the card div). This avoids
-  // issues when the touch/mouse target is a nested element (img, p, etc.).
   const handleStart = (e) => {
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     e.currentTarget.dataset.startX = clientX;
@@ -26,7 +23,7 @@ function CatCard({ image, onSwipe, swipeDirection, isNext }) {
     const startX = parseFloat(e.currentTarget.dataset.startX || 0);
     const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
 
-    // simple threshold-based swipe detection
+    // for swipe
     if (startX - endX > 50) {
       onSwipe("left");
     } else if (endX - startX > 50) {

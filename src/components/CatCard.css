@@ -4,11 +4,11 @@
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
-  background-color: #fff; /* always white */
+  background-color: #fff; 
   box-shadow: 0 8px 18px rgba(0,0,0,0.15);
   transition: transform 0.35s ease, opacity 0.35s ease;
   z-index: 2;
-  color: #222; /* force dark text inside the card */
+  color: #222; 
 }
 
 .next-card {
@@ -37,7 +37,7 @@
 .cat-info {
   padding: 12px;
   text-align: center;
-  color: inherit; /* inherits from .cat-card which is always #222 */
+  color: inherit; 
 }
 
 .cat-info h2 {

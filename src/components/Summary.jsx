@@ -7,13 +7,12 @@ function Summary({ likedCats, darkMode, toggleDarkMode, onRetry }) {
   const handleSave = () => {
     if (likedCats.length === 0) return;
 
-    // Create a zip using JSZip
+    // Zip creation using JSZip
     import("jszip").then(JSZip => {
       const zip = new JSZip.default();
       const imgFolder = zip.folder("liked-cats");
 
       likedCats.forEach((imgUrl, i) => {
-        // Fetch the image as blob
         fetch(imgUrl)
           .then(res => res.blob())
           .then(blob => {

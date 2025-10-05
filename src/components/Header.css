@@ -23,12 +23,12 @@
 
 
 .logo {
-  display: inline-flex; /* match summary page */
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
-  flex: none; /* don't stretch */
+  flex: none; 
   gap: 8px;
-  font-weight: 400; /* normal */
+  font-weight: 400; 
   font-size: 2rem;
   white-space: nowrap;
   pointer-events: none;
@@ -42,8 +42,8 @@
 
 .logo-text {
   font-family: 'Pacifico', cursive;
-  font-size: 2rem; /* slightly larger for emphasis */
-  font-weight: bold; /* keep it natural, not bold */
+  font-size: 2rem; 
+  font-weight: bold; 
 }
 
 .header-btn {

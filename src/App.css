@@ -112,7 +112,7 @@ h1 {
   }
 }
 
-/* === BUTTONS UNDER CARDS === */
+/*  Like Dislike Buttons Covers */
 .buttons {
   display: flex;
   gap: 40px;
@@ -139,7 +139,7 @@ h1 {
   transform: scale(0.9);
 }
 
-/* === COVER / LOADING SCREENS === */
+/*  Loading Screen Cover  */
 .first-cover,
 .loading-screen {
   position: fixed;
@@ -193,8 +193,8 @@ h1 {
 
 .logo .logo-text {
   font-family: 'Pacifico', cursive;
-  font-size: 1.5rem; /* slightly larger for emphasis */
-  font-weight: normal; /* keep it natural, not bold */
+  font-size: 1.5rem; 
+  font-weight: normal; 
 }
 
 .loader {
@@ -206,7 +206,7 @@ h1 {
   animation: spin 900ms linear infinite;
 }
 
-/* === ANIMATIONS === */
+/* Cover Animations */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -216,14 +216,13 @@ h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === MOBILE TWEAKS === */
 @media (max-width: 480px) {
   .logo .logo-emoji { font-size: 1.6rem; }
   .logo .logo-text { font-size: 1rem; }
   .loader { width: 40px; height: 40px; border-width: 3px; }
 }
 
-/* === GLOBAL FIXES === */
+/* Global */
 html, body {
   margin: 0;
   padding: 0;

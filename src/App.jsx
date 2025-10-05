@@ -19,7 +19,7 @@ function App() {
     fetchCats();
   }, []);
 
-  // Sync body background with theme
+  // Theme effect
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
@@ -104,7 +104,7 @@ function App() {
     <div className={`app-container ${darkMode ? "dark" : ""}`}>
       <Header darkMode={darkMode} toggleDarkMode={() => setDarkMode(d => !d)} />
 
-      {/* 🐱 Card Stack */}
+      {/* Stacking Dating Cards */}
       <div className="card-stack">
         {cats.slice(currentIndex, currentIndex + 2).map((cat, i) => (
           <CatCard
@@ -117,13 +117,12 @@ function App() {
         ))}
       </div>
 
-      {/* ❤️ / ❌ Buttons */}
+      {/* Like/Dislike Buttons */}
       <div className="buttons">
         <button className="dislike" onClick={() => handleSwipe("left")}>✖️</button>
         <button className="like" onClick={() => handleSwipe("right")}>❤️</button>
       </div>
 
-      {/* Overlay for first card */}
       {currentIndex === 0 && coverFirst && (
         <div className="first-cover">
           <p className="cover-text">Showing cats now...</p>
