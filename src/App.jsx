@@ -119,7 +119,7 @@ function App() {
 
       {/* ❤️ / ❌ Buttons */}
       <div className="buttons">
-        <button className="dislike" onClick={() => handleSwipe("left")}>❌</button>
+        <button className="dislike" onClick={() => handleSwipe("left")}>✖️</button>
         <button className="like" onClick={() => handleSwipe("right")}>❤️</button>
       </div>
 
