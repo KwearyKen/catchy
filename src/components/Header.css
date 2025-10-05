@@ -54,9 +54,16 @@
   transition: transform 0.2s ease, color 0.2s ease;
   color: inherit;
   z-index: 2;
+  outline: none;
 }
 
 .header-btn:hover {
   transform: scale(1.1);
   color: #ff5e78;
 }
+
+.header-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
